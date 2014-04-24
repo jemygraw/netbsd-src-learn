@@ -1,6 +1,6 @@
 我比对了一下netbsd的echo程序和自己写的echo程序。
 
-1. netbsd的echo程序
+netbsd的echo程序
 ```c
 #include <locale.h>
 #include <stdio.h>
@@ -34,7 +34,7 @@ main(int argc, char *argv[])
 }
 ```
 
-2. 我的echo程序
+我的echo程序
 ```c
 #include <stdio.h>
 #include <stdlib.h>
