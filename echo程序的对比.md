@@ -1,4 +1,5 @@
 我比对了一下netbsd的echo程序和自己写的echo程序。
+
 1. netbsd的echo程序
 ```c
 #include <locale.h>
@@ -32,7 +33,8 @@ main(int argc, char *argv[])
 	exit(0);
 }
 ```
-我的echo程序
+
+2. 我的echo程序
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -60,7 +62,7 @@ int main(int argc, char *argv[])
         putchar('\n');
     }
 }
-```c
+```
 首先，我发现下面的程序段可以整合到第一个if语句里面。
 ```c
 if(nflag)
