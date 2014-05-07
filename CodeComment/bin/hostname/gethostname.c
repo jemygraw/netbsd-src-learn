@@ -15,24 +15,23 @@
  这个函数成功时返回0，否则返回-1。
  */
 
-int		ROKEN_LIB_FUNCTION
-gethostname(char *name, int namelen)
+int	ROKEN_LIB_FUNCTION gethostname(char *name, int namelen)
 {
-#if defined(HAVE_UNAME)
-	{
-		struct utsname	utsname;
-		int		ret;
+	#if defined(HAVE_UNAME)
+		{
+			struct utsname	utsname;
+			int		ret;
 
-		ret = uname(&utsname);
-		if (ret < 0)
-			return ret;
-		strlcpy(name, utsname.nodename, namelen);
-		return 0;
-	}
-#else
-			strlcpy       (name, "some.random.host", namelen);
-	return 0;
-#endif
+			ret = uname(&utsname);
+			if (ret < 0)
+				return ret;
+			strlcpy(name, utsname.nodename, namelen);
+			return 0;
+		}
+	#else
+			strlcpy(name, "some.random.host", namelen);
+			return 0;
+	#endif
 }
 
 #endif				/** GETHOSTNAME */
